@@ -2,7 +2,7 @@
   "name": "copilot-telemetry-logger",
   "displayName": "Copilot Telemetry Logger",
   "description": "Logs daily GitHub Copilot premium usage locally",
-  "version": "0.1.0",
+  "version": "1.0.2",
   "publisher": "local",
   "license": "MIT",
   "engines": {
