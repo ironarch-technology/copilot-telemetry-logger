@@ -40,6 +40,7 @@
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --max-warnings=0",
+    "package": "npx -y @vscode/vsce package",
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
@@ -49,6 +50,7 @@
     "@typescript-eslint/eslint-plugin": "^8.48.1",
     "@typescript-eslint/parser": "^8.48.1",
     "@vscode/test-electron": "^2.5.2",
+    "@vscode/vsce": "^3.7.1",
     "eslint": "^9.39.1",
     "glob": "^10.4.5",
     "globals": "^15.12.0",
