@@ -43,9 +43,19 @@ npm run compile
 npm test
 ```
 
+- Package a VSIX locally:
+
+```bash
+npm run package
+```
+
 Troubleshooting
 - If the extension reports write permission errors, ensure the configured directory is writable by your user.
 - If using Remote - SSH or Codespaces the file will be on the remote host's filesystem.
+
+Releases
+- GitHub Releases attach a built `.vsix` automatically (see `.github/workflows/release-vsix.yml`).
+- You can also download a VSIX from the GitHub Actions workflow artifacts when triggered manually.
 
 Debug: Force Quota Reset (Manual Rollover)
 - To manually test log rollover without waiting for a real reset, set the `COPILOT_TELEMETRY_FORCE_RESET` environment variable before launching VS Code or the Extension Development Host.
