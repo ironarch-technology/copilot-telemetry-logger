@@ -30,7 +30,7 @@ jobs:
 
       - name: Upload VSIX to Release
         if: github.event_name == 'release'
-        uses: softprops/action-gh-release@c062e08bd08727dcd5a24ff4537e8e85d3e53a1a
+        uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844
         with:
           files: "*.vsix"
         env:
