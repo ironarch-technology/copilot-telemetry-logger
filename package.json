@@ -1,0 +1,58 @@
+{
+  "name": "copilot-telemetry-logger",
+  "displayName": "Copilot Telemetry Logger",
+  "description": "Logs daily GitHub Copilot premium usage locally",
+  "version": "0.1.0",
+  "publisher": "local",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other",
+    "AI"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "copilotTelemetry.runNow",
+        "title": "Copilot Telemetry: Run Daily Log Now"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "properties": {
+        "copilotTelemetry.logDirectory": {
+          "type": "string",
+          "default": "",
+          "description": "Directory to write the Copilot telemetry log. Empty means the user's home directory. Use '~' for home."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --max-warnings=0",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@types/vscode": "^1.90.0",
+    "@typescript-eslint/eslint-plugin": "^8.48.1",
+    "@typescript-eslint/parser": "^8.48.1",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.39.1",
+    "glob": "^10.4.5",
+    "globals": "^15.12.0",
+    "mocha": "^10.8.2",
+    "typescript": "^5.9.3"
+  }
+}
