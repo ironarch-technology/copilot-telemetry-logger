@@ -40,7 +40,7 @@
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --max-warnings=0",
-    "package": "npx -y @vscode/vsce package",
+    "package": "npm exec -- vsce package",
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {

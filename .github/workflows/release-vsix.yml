@@ -2,7 +2,7 @@ name: Build VSIX on Release
 
 on:
   release:
-    types: [created]
+    types: [published]
   workflow_dispatch: {}
 
 jobs:
@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
 
       - name: Install dependencies
         run: npm ci
@@ -26,11 +26,11 @@ jobs:
         run: npm run compile
 
       - name: Package VSIX
-        run: npx -y @vscode/vsce package
+        run: npm exec -- vsce package
 
       - name: Upload VSIX to Release
         if: github.event_name == 'release'
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@c062e08bd08727dcd5a24ff4537e8e85d3e53a1a
         with:
           files: "*.vsix"
         env:
